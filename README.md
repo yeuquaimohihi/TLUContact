@@ -1,6 +1,6 @@
 Ứng dụng TLUContact:
-Ứng dụng Android này cung cấp hệ thống quản lý liên hệ cho nhân viên và quản trị viên trường đại học.
-Cho phép người dùng xem danh sách khoa/phòng và liên hệ nhân viên, kèm tính năng quản trị cho người dùng được ủy quyền.
+-Ứng dụng Android này cung cấp hệ thống quản lý liên hệ cho nhân viên và quản trị viên trường đại học.
+ Cho phép người dùng xem danh sách khoa/phòng và liên hệ nhân viên, kèm tính năng quản trị cho người dùng được ủy quyền.
 
 Tính năng chính:
 -Xác thực người dùng bằng Firebase (đăng nhập/đăng ký)
