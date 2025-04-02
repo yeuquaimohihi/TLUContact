@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:hint="Tên" />
+
+    <EditText
+        android:id="@+id/input_phone"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="Số Điện Thoại" />
+
+    <EditText
+        android:id="@+id/input_address"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:hint="Địa Chỉ" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="109dp"
+        android:layout_height="62dp"
+        android:text="Edit" />
+</LinearLayout>

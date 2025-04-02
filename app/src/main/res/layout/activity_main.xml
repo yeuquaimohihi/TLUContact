@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_donvi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh Bạ Đơn Vị"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/btn_CBNV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh Bạ CBNV"
+        android:layout_margin="8dp"/>
+
+
+    <Button
+        android:id="@+id/btn_add_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm User"
+        android:layout_margin="8dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Đăng Xuất" />
+</LinearLayout>
