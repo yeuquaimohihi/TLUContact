@@ -27,7 +27,7 @@ class EditCbnvActivity : AppCompatActivity() {
         val positionInput = findViewById<EditText>(R.id.input_chucvu)
         val phoneInput = findViewById<EditText>(R.id.input_phone)
         val emailInput = findViewById<EditText>(R.id.input_email)
-        donviInput = findViewById<EditText>(R.id.input_donvi)
+        donviInput = findViewById(R.id.input_donvi)
         val editButton = findViewById<Button>(R.id.btn_edit)
 
         cbnvId = intent.getIntExtra("CBNV_ID", -1)
@@ -76,8 +76,18 @@ class EditCbnvActivity : AppCompatActivity() {
                 avatarCbnv = R.drawable.ic_people
             )
 
-            dbHelper.updateCbnv(updatedCbnv)
-            finish()
+            // Add logging to verify the donviId is being passed correctly
+            Log.d("EditCbnvActivity", "Updating CBNV with donviId: $selectedDonviId")
+
+            // You could add a callback to confirm the update was successful
+            dbHelper.updateCbnv(updatedCbnv) { success ->
+                if (success) {
+                    Log.d("EditCbnvActivity", "Successfully updated CBNV with new donviId")
+                } else {
+                    Log.e("EditCbnvActivity", "Failed to update CBNV")
+                }
+                finish()
+            }
         }
     }
 
@@ -98,7 +108,7 @@ class EditCbnvActivity : AppCompatActivity() {
             // Show dialog to select which donvi
             AlertDialog.Builder(this)
                 .setTitle("Chọn đơn vị")
-                .setItems(donviNames) { _: DialogInterface, which: Int ->
+                .setItems(donviNames) { _, which ->
                     // Set the selected donvi name to the input field
                     donviInput.setText(donviNames[which])
                     // Store the donvi ID for later use

@@ -9,6 +9,7 @@ class ContactDatabaseHelper {
 
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val DONVI_COLLECTION = "donvi"
+    private val CBNV_COLLECTION = "cbnv"
 
     fun addDonvi(donvi: Donvi, callback: ((Boolean) -> Unit)? = null) {
         firestore.collection(DONVI_COLLECTION).document(donvi.id.toString())
@@ -115,14 +116,16 @@ class ContactDatabaseHelper {
             }
     }
 
-    fun updateCbnv(cbnv: Cbnv) {
-        val CBNV_COLLECTION = "cbnv"
-        firestore.collection(CBNV_COLLECTION).document(cbnv.id.toString()).set(cbnv)
+    fun updateCbnv(cbnv: Cbnv, callback: ((Boolean) -> Unit)? = null) {
+        firestore.collection(CBNV_COLLECTION).document(cbnv.id.toString())
+            .set(cbnv)
             .addOnSuccessListener {
-                Log.d("DBHelper", "CBNV successfully updated with ID: ${cbnv.id}")
+                Log.d("DBHelper", "CBNV updated successfully with donviId: ${cbnv.donviId}")
+                callback?.invoke(true)
             }
             .addOnFailureListener { e ->
                 Log.e("DBHelper", "Error updating CBNV", e)
+                callback?.invoke(false)
             }
     }
 
